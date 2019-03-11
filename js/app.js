@@ -1,21 +1,21 @@
 		const header = document.querySelector('header'),
 		icon = document.querySelector('.icon'),
-		wall = document.querySelector('.wall');
+		sidenavOverlay = document.querySelector('.sidenav-overlay');
 		icon.addEventListener('click', ()=>{
 			header.classList.toggle('active');
-			if (wall.classList.contains('wall-none')) {
-				wall.classList.remove('wall-none');
+			if (sidenavOverlay.classList.contains('sidenav-overlay-none')) {
+				sidenavOverlay.classList.remove('sidenav-overlay-none');
 			}else{
-				wall.classList.add('wall-effect');
+				sidenavOverlay.classList.add('sidenav-overlay-vanished');
 				setTimeout(none, 500);
 			}
 		});
-		wall.addEventListener('click', ()=>{
+		sidenavOverlay.addEventListener('click', ()=>{
 			header.classList.remove('active');
-			wall.classList.add('wall-effect');
+			sidenavOverlay.classList.add('sidenav-overlay-vanished');
 			setTimeout(none, 500);
 		});
 		function none(){
-			wall.classList.remove('wall-effect');
-			wall.classList.add('wall-none');
+			sidenavOverlay.classList.remove('sidenav-overlay-vanished');
+			sidenavOverlay.classList.add('sidenav-overlay-none');
 		}
